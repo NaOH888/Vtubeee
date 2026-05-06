@@ -34,3 +34,4 @@ datasets/
 *.7z
 .vts_token.json
 tmp.txt
+scripts/no_git/

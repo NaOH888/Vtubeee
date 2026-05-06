@@ -198,11 +198,19 @@ def _load_local_timm_weights(
             if key.startswith("backbone.")
         }
 
+    expected_keys = set(backbone.state_dict().keys())
+    provided_keys = set(state_dict.keys())
+    overlapping_keys = expected_keys & provided_keys
     missing_keys, unexpected_keys = backbone.load_state_dict(state_dict, strict=False)
     if not state_dict:
         raise ValueError(f"No usable state_dict found in local pretrained path: {path}")
-    if len(state_dict) > 0 and len(state_dict) == len(unexpected_keys):
+    if not overlapping_keys:
+        expected_example = ", ".join(list(sorted(expected_keys))[:5])
+        provided_example = ", ".join(list(sorted(provided_keys))[:5])
         raise RuntimeError(
-            "Loaded local pretrained file, but all keys were unexpected for the timm backbone. "
-            f"path={path}"
+            "Loaded local pretrained file, but none of its keys match the current timm backbone. "
+            f"path={path}. "
+            "This usually means `--model-name` does not match the exported pretrained file. "
+            f"Expected key examples: [{expected_example}] ; "
+            f"provided key examples: [{provided_example}]"
         )
