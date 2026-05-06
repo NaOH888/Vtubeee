@@ -12,7 +12,7 @@ import torch
 from torch import Tensor
 from torch.utils.data import Dataset
 
-from vtuber.avatar import AvatarState
+from vtuber.avatar.avatar_state import AvatarState
 
 
 DEFAULT_AVATAR_STATE_FIELDS: tuple[str, ...] = (
