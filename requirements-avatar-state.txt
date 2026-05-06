@@ -1,0 +1,11 @@
+# 说明：
+# - torch/torchvision/torchaudio 需要从 PyTorch cu130 源安装，才能与当前 GPU 环境一致。
+# - 例如：
+#   python -m pip install --upgrade --force-reinstall torch==2.10.0 torchvision==0.25.0 torchaudio==2.10.0 --index-url https://download.pytorch.org/whl/cu130
+numpy==1.26.4
+opencv-python==4.10.0.84
+lmdb==1.7.5
+torch==2.10.0
+torchvision==0.25.0
+torchaudio==2.10.0
+timm==1.0.26

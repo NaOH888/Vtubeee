@@ -1,0 +1,7 @@
+# 本地运行 / VTube Studio 控制 / 数据采样环境
+numpy==1.26.4
+opencv-python==4.10.0.84
+lmdb==1.7.5
+websockets==15.0.1
+comtypes==1.1.14
+pygrabber==0.2
