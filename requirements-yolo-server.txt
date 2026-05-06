@@ -1,0 +1,12 @@
+# 服务端 YOLO 训练依赖
+#
+# 前提：
+# - Python 3.12
+# - torch 2.8.0+cu128
+# - torchvision 0.23.0+cu128
+#
+# 这些由服务端基础环境提供，这里不重复钉死。
+
+lmdb==1.7.5
+opencv-python-headless==4.12.0.88
+ultralytics==8.4.46
